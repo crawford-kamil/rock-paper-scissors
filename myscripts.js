@@ -50,26 +50,8 @@
             alert( playerLoss)
         } else if( playerChoice === "Paper" && computerChoice === "Scissors" ) {
             alert( playerLoss)
+        } else {
+            alert( "Invalid option. Please choose Rock, Paper, or Scissors." )
         }
     }
-    /*
-    This is the logic for the playRound function. Delete once the function is written.
-
-        if( computerChoice === playerChoice ) {
-            alert( "It's a tie. " + playerChoice + " ties with " + computerChoice )    
-        } else if( playerChoice === "Rock" && computerChoice === "Scissors" ) {
-            alert( playerWin )
-        } else if( playerChoice === "Scissors" && computerChoice === "Paper" ) {
-            alert( playerWin )
-        } else if( playerChoice === "Paper" && computerChoice === "Rock" ) {
-            alert( playerWin )
-        } else if( playerChoice === "Rock" && computerChoice === "Paper" ) {
-            alert( playerLoss )
-        } else if( playerChoice === "Scissors" && computerChoice === "Rock" ) {
-            alert( playerLoss)
-        } else if( playerChoice === "Paper" && computerChoice === "Scissors" ) {
-            alert( playerLoss)
-        } else {
-            invalidOption
-        } 
-    */
+   
