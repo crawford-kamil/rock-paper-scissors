@@ -1,25 +1,26 @@
+     function randomNumber() {
+        return Math.floor(Math.random() * 1);
+    }
+
+
     function getComputerChoice() {
         if (randomNumber() < 34) {
             return "Paper"
-    } else if (randomNumber() > 67) {
+    } else if (randomNumber() > 66) {
         return "Rock"
     } else {
         return "Scissors"
     }
 }
-    
-    
-    function randomNumber() {
-        return Math.floor(Math.random() * 100);
-    }
 
+    
     let computerChoice = getComputerChoice();
+    let playerPrompt = prompt("Choose Rock, Paper, or Scissors");
+    let playerChoice = playerPrompt.charAt( 0 ).toUpperCase() + playerPrompt.slice( 1 ).toLowerCase();
+    let playerWin = "You win this round. " + playerChoice + " beats " + computerChoice + ".";
+    let playerLoss = "You lose this round. " + playerChoice + " loses to " + computerChoice + ".";
+    let invalidOption = alert( "Invalid option, please enter Rock, Paper, or Scissors." ) + playerPrompt
 
-    let playerprompt = prompt("Choose Rock, Paper, or Scissors");
-
-    let playerChoice = playerprompt.charAt( 0 ).toUpperCase() + playerprompt.slice( 1 ).toLowerCase();
-    let playerWin = "You win. " + playerChoice + " beats " + computerChoice;
-    let playerLoss = "You lose. " + playerChoice + " loses to " + computerChoice;
 
     if (computerChoice === playerChoice) {
             alert( "It's a tie. " + playerChoice + " ties with " + computerChoice )    
@@ -36,7 +37,6 @@
         } else if( playerChoice === "Paper" && computerChoice === "Scissors" ) {
             alert( playerLoss)
         } else {
-            alert( "Invalid option, please enter Rock, Paper, or Scissors")
-        }
-
+            invalidOption
+        } 
 
