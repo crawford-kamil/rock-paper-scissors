@@ -1,5 +1,5 @@
      function randomNumber() {
-        return Math.floor(Math.random() * 1);
+        return Math.floor(Math.random() * 100);
     }
 
 
@@ -13,31 +13,45 @@
     }
 }
     
-    /*
-    1. Make playerPrompt and invalidOption into functions. As constants they ask for prompts, and
-    alert the user without being called.
-
-    */
-
     let computerChoice = getComputerChoice();
-    
-    /*
-    let playerWin = "You win this round. " + playerChoice + " beats " + computerChoice + ".";
-    let playerLoss = "You lose this round. " + playerChoice + " loses to " + computerChoice + ".";
-    let invalidOption = alert( "Invalid option, please enter Rock, Paper, or Scissors." )
-    */
 
 
     function getPlayerInput() {   
-        let userChoice = prompt( "Choose Rock, Paper, or Scissors" );
-        return userChoice;
+        let userInput = prompt( "Choose Rock, Paper, or Scissors" );
+        return userInput;
     }
         
     function getPlayerChoice() {
-        let string = getPlayerInput();
-        return string.charAt( 0 ).toUpperCase() + string.slice( 1 ).toLowerCase();
+        let initialCaseUserInput = getPlayerInput();
+        return initialCaseUserInput.charAt( 0 ).toUpperCase() + initialCaseUserInput.slice( 1 ).toLowerCase();
     }
 
+    function notifyofInvalidInput() {
+        alert( "Invalid option, please enter Rock, Paper, or Scissors." )
+    }
+
+    
+
+    function playRound() {
+        let playerChoice = getPlayerChoice();
+        let playerWin = playerChoice + " beats " + computerChoice + "." + " You win.";
+        let playerLoss = playerChoice + " loses to " + computerChoice + "." + " You lose.";
+        if( computerChoice === playerChoice ) {
+            alert( "It's a tie. " + playerChoice + " ties with " + computerChoice )
+        } else if( playerChoice === "Rock" && computerChoice === "Scissors" ) {
+            alert( playerWin )
+        } else if( playerChoice === "Scissors" && computerChoice === "Paper" ) {
+            alert( playerWin )
+        } else if( playerChoice === "Paper" && computerChoice === "Rock" ) {
+            alert( playerWin )
+        } else if( playerChoice === "Rock" && computerChoice === "Paper" ) {
+            alert( playerLoss )
+        } else if( playerChoice === "Scissors" && computerChoice === "Rock" ) {
+            alert( playerLoss)
+        } else if( playerChoice === "Paper" && computerChoice === "Scissors" ) {
+            alert( playerLoss)
+        }
+    }
     /*
     This is the logic for the playRound function. Delete once the function is written.
 
