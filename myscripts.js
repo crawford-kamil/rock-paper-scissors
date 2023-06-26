@@ -12,17 +12,36 @@
         return "Scissors"
     }
 }
-
     
+    /*
+    1. Make playerPrompt and invalidOption into functions. As constants they ask for prompts, and
+    alert the user without being called.
+
+    */
+
     let computerChoice = getComputerChoice();
-    let playerPrompt = prompt("Choose Rock, Paper, or Scissors");
-    let playerChoice = playerPrompt.charAt( 0 ).toUpperCase() + playerPrompt.slice( 1 ).toLowerCase();
+    
+    /*
     let playerWin = "You win this round. " + playerChoice + " beats " + computerChoice + ".";
     let playerLoss = "You lose this round. " + playerChoice + " loses to " + computerChoice + ".";
-    let invalidOption = alert( "Invalid option, please enter Rock, Paper, or Scissors." ) + playerPrompt
+    let invalidOption = alert( "Invalid option, please enter Rock, Paper, or Scissors." )
+    */
 
 
-    if (computerChoice === playerChoice) {
+    function getPlayerInput() {   
+        let userChoice = prompt( "Choose Rock, Paper, or Scissors" );
+        return userChoice;
+    }
+        
+    function getPlayerChoice() {
+        let string = getPlayerInput();
+        return string.charAt( 0 ).toUpperCase() + string.slice( 1 ).toLowerCase();
+    }
+
+    /*
+    This is the logic for the playRound function. Delete once the function is written.
+
+        if( computerChoice === playerChoice ) {
             alert( "It's a tie. " + playerChoice + " ties with " + computerChoice )    
         } else if( playerChoice === "Rock" && computerChoice === "Scissors" ) {
             alert( playerWin )
@@ -39,4 +58,4 @@
         } else {
             invalidOption
         } 
-
+    */
