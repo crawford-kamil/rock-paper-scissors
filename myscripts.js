@@ -1,3 +1,4 @@
+     /*
      function randomNumber() {
         return Math.floor(Math.random() * 100);
     }
@@ -12,26 +13,28 @@
         return "Scissors"
     }
 }
+*/
+    
+    function getComputerChoice() {
+        let randomNumber = Math.floor(Math.random() * 100);
+        if (randomNumber < 34) {
+            return "Paper"
+    } else if (randomNumber > 66) {
+        return "Rock"
+    } else {
+        return "Scissors"
+    }
+}
+
     
     let computerChoice = getComputerChoice();
 
 
-    function getPlayerInput() {   
-        let userInput = prompt( "Choose Rock, Paper, or Scissors" );
-        return userInput;
-    }
-        
     function getPlayerChoice() {
-        let initialCaseUserInput = getPlayerInput();
-        return initialCaseUserInput.charAt( 0 ).toUpperCase() + initialCaseUserInput.slice( 1 ).toLowerCase();
+        let playerChoice = prompt( "Choose Rock, Paper, or Scissors" );
+        return playerChoice.charAt( 0 ).toUpperCase() + playerChoice.slice( 1 ).toLowerCase();
     }
-
-    function notifyofInvalidInput() {
-        alert( "Invalid option, please enter Rock, Paper, or Scissors." )
-    }
-
     
-
     function playRound() {
         let playerChoice = getPlayerChoice();
         let playerWin = playerChoice + " beats " + computerChoice + "." + " You win.";
