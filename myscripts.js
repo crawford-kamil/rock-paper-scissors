@@ -17,13 +17,6 @@
         return playerChoice.charAt( 0 ).toUpperCase() + playerChoice.slice( 1 ).toLowerCase();
     }
     
-    /*
-    function ternaryPlayRound() { 
-        let playerChoice = getPlayerChoice();
-        let playerWin = playerChoice + " beats " + computerChoice + "." + " You win.";
-        let playerLoss = playerChoice + " loses to " + computerChoice + "." + " You lose.";
-    */    
-    
         let playerWins = 0;
         let computerWins = 0;
 
@@ -48,15 +41,29 @@
         }
     }
     
-   
-    function playGame() {
-
-        function trackPlayerWins(playerWins, ) {
-            for( let i = 0; i <= 3; i++ ) {
-                playerWins += 1;
-                return playerWins;
-            }
-        }
-        playRound();
-    }
     
+    function playGame() { 
+        let gameOver = 3;
+        ( playerWins <= gameOver && computerWins <= gameOver )?
+        playRound():
+        console.log("else")
+    }
+        /*
+        ( playerWins >= gameOver )
+        alert( "You Win!" );
+        ( computerWins >= gameOver )
+        alert( "You Lose. Try again." )
+    }
+    */
+    
+    /*
+    letRound = true;
+    let wins = 0;
+    let losses = 0;
+    function playGame() {
+        /*while/
+        letRound = true ?
+        ( wins++ ):
+        ( losses++ )
+    }
+    */
