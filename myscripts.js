@@ -22,8 +22,8 @@
 
     function playRound() {
         let playerChoice = getPlayerChoice();
-        let playerWin = playerChoice + " beats " + computerChoice + "." + " You win.";
-        let playerLoss = playerChoice + " loses to " + computerChoice + "." + " You lose.";
+        let playerWin = playerChoice + " beats " + computerChoice + "." + " You win this round. " + "Player: " + playerWins + " Computer: " + computerWins;
+        let playerLoss = playerChoice + " loses to " + computerChoice + "." + " You lose this round. " + "Player: " + playerWins + " Computer: " + computerWins;
         if( computerChoice === playerChoice ) {
             alert( "It's a tie. " + playerChoice + " ties with " + computerChoice )
         } else if( playerChoice === "Rock" && computerChoice === "Scissors" 
@@ -41,29 +41,15 @@
         }
     }
     
-    
-    function playGame() { 
-        let gameOver = 3;
-        ( playerWins <= gameOver && computerWins <= gameOver )?
-        playRound():
-        console.log("else")
-    }
-        /*
-        ( playerWins >= gameOver )
-        alert( "You Win!" );
-        ( computerWins >= gameOver )
-        alert( "You Lose. Try again." )
-    }
-    */
-    
-    /*
-    letRound = true;
-    let wins = 0;
-    let losses = 0;
+        let playerScore = 0;
+        let computerScore = 0;
+
     function playGame() {
-        /*while/
-        letRound = true ?
-        ( wins++ ):
-        ( losses++ )
+        for( let i = 1; i < 6; i++ ) {
+            playerWins >= 3 ? 
+            alert( "You've won the game!" ) :
+            computerWins >= 3 ? 
+            alert( "You've lost the game." ) :
+            playRound()
     }
-    */
+    }
